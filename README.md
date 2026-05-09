@@ -174,9 +174,3 @@ Please see the project `LICENSE` file at the repository root for licensing detai
 
 ---
 
-If you want, I can also:
-- add a small `Makefile`/`run-dev` script to launch both servers concurrently
-- add a Dockerfile + docker-compose for local dev
-- add a brief architecture diagram
-
-Feel free to tell me which extras you'd like and I'll add them.
