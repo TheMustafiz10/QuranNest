@@ -2,9 +2,12 @@ import { useState, useEffect } from 'react';
 import type { Chapter, ChapterDetail, FontSettings, VerseSearchResult } from '@/types/quran';
 
 
+const DEFAULT_PROD_API_BASE = 'https://qurannest-1.onrender.com/api';
+
 
 const API_BASE_CANDIDATES = [
   process.env.NEXT_PUBLIC_API_URL,
+  ...(process.env.NODE_ENV === 'production' ? [DEFAULT_PROD_API_BASE] : []),
   ...(process.env.NODE_ENV === 'production'
     ? []
     : [
