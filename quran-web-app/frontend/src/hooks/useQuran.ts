@@ -5,8 +5,12 @@ import type { Chapter, ChapterDetail, FontSettings, VerseSearchResult } from '@/
 
 const API_BASE_CANDIDATES = [
   process.env.NEXT_PUBLIC_API_URL,
-  ...Array.from({ length: 11 }, (_value, index) => `http://localhost:${5000 + index}/api`),
-  'http://localhost:4000/api'
+  ...(process.env.NODE_ENV === 'production'
+    ? []
+    : [
+        ...Array.from({ length: 11 }, (_value, index) => `http://localhost:${5000 + index}/api`),
+        'http://localhost:4000/api'
+      ])
 ].filter((value): value is string => Boolean(value));
 
 
