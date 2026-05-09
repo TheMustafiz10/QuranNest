@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+/* Light Theme */
+html[data-theme='light'] {
+  color-scheme: light;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-tertiary: #9ca3af;
+  --border-color: #e5e7eb;
+  --accent-color: #10b981;
+  --accent-light: #d1fae5;
+}
+
+
+
+/* Dark Theme */
+html[data-theme='dark'] {
+  color-scheme: dark;
+  --bg-primary: #0f1419;
+  --bg-secondary: #1a202c;
+  --bg-tertiary: #2d3748;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --border-color: #334155;
+  --accent-color: #10b981;
+  --accent-light: #d1fae5;
+}
+
+/* Sepia Theme */
+html[data-theme='sepia'] {
+  color-scheme: dark;
+  --bg-primary: #f5ede0;
+  --bg-secondary: #f1e4d4;
+  --bg-tertiary: #ede6da;
+  --text-primary: #3e2723;
+  --text-secondary: #5d4037;
+  --text-tertiary: #8d6e63;
+  --border-color: #d7ccc8;
+  --accent-color: #c97c44;
+  --accent-light: #e1c4aa;
+}
+
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(74, 139, 58, 0.05), transparent 28%),
+    radial-gradient(circle at top right, rgba(201, 149, 63, 0.05), transparent 24%),
+    var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--accent-color);
+  color: white;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .font-display {
+    font-family: var(--font-display), Georgia, serif;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri Quran', 'Amiri', 'Scheherazade New', serif;
+  }
+
+
+
+  .bg-primary {
+    @apply bg-[var(--bg-primary)];
+  }
+  .bg-secondary {
+    @apply bg-[var(--bg-secondary)];
+  }
+  .bg-tertiary {
+    @apply bg-[var(--bg-tertiary)];
+  }
+  .text-primary {
+    @apply text-[var(--text-primary)];
+  }
+  .text-secondary {
+    @apply text-[var(--text-secondary)];
+  }
+  .text-tertiary {
+    @apply text-[var(--text-tertiary)];
+  }
+  .border-base {
+    @apply border-[var(--border-color)];
+  }
+}
